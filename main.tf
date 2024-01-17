@@ -19,13 +19,3 @@ data "google_compute_image" "all" {
   filter      = "name eq fortinet-fgt${local.lic}-${local.arch_pre}${local.ver}-\\d{8}-\\d{3}-${local.arch_post}.*"
   most_recent = true
 }
-
-
-output "image" {
-  value = data.google_compute_image.all
-}
-
-output "self_link" {
-  value = data.google_compute_image.all.self_link
-}
-
