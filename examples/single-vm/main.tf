@@ -2,7 +2,7 @@
 # Call the module to find the image
 #
 module "fgtimage" {
-  source = "forforti/find-fortigate-image"
+  source = "forforti/find-fortigate-image/google"
   ver    = "7.4.1"
   lic    = "byol"
 }
