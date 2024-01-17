@@ -8,6 +8,23 @@ This module helps you find the correct image based on the following search crite
 
 If multiple images are matching, the result will point to the latest one.
 
+## Using as part of terraform code
+
+This module can be used to identify the boot image when creating FortiGate VM instances in Google Cloud. Use `module` block to call this module with desired firmware version, licensing and architecture as parameters. Use the module `self_link` output value to indicate the image. See [examples](examples/single-vm/main.tf) for working code.
+
+## Using as a standalone search tool (CLI)
+
+You can use the module to search for the image in command line. Simply run
+
+```
+terraform init
+terraform plan
+```
+
+and provide the version number to get details about the image. 
+
+Licensing defaults to PAYG and architecture to x64. Use `-var` command-line parameters to change them.
+
 ### Outputs
 
 - self_link - URI of the image
